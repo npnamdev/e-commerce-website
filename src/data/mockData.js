@@ -97,6 +97,34 @@ export const products = [
   },
 ];
 
+export const users = [
+  { id: 1, name: 'Nguyễn Văn A', email: 'a.nguyen@example.com', phone: '0901234567', role: 'Admin', isActive: true },
+  { id: 2, name: 'Trần Thị B', email: 'b.tran@example.com', phone: '0902345678', role: 'User', isActive: false },
+  { id: 3, name: 'Lê Minh C', email: 'c.le@example.com', phone: '0903456789', role: 'User', isActive: true },
+  { id: 4, name: 'Phạm Quỳnh D', email: 'd.pham@example.com', phone: '0904567890', role: 'Admin', isActive: true },
+  { id: 5, name: 'Hoàng Anh E', email: 'e.hoang@example.com', phone: '0905678901', role: 'User', isActive: false },
+  { id: 6, name: 'Đỗ Minh F', email: 'f.do@example.com', phone: '0906789012', role: 'Admin', isActive: true },
+  { id: 7, name: 'Vũ Lan G', email: 'g.vu@example.com', phone: '0907890123', role: 'User', isActive: true },
+  { id: 8, name: 'Trương Quang H', email: 'h.truong@example.com', phone: '0908901234', role: 'User', isActive: true },
+  { id: 9, name: 'Bùi Lê I', email: 'i.bui@example.com', phone: '0909012345', role: 'Admin', isActive: false },
+  { id: 10, name: 'Ngô Thanh J', email: 'j.ngo@example.com', phone: '0900123456', role: 'User', isActive: true }
+];
+
+
+export const orders = [
+  { id: 1, userName: 'Nguyễn Văn A', productName: 'Laptop HP', quantity: 1, totalPrice: 15000000, status: 'Delivered' },
+  { id: 2, userName: 'Trần Thị B', productName: 'Smartphone Samsung', quantity: 2, totalPrice: 22000000, status: 'Delivered' },
+  { id: 3, userName: 'Lê Minh C', productName: 'Máy Tính Bảng', quantity: 1, totalPrice: 8000000, status: 'Chờ Xử Lý' },
+  { id: 4, userName: 'Phạm Quỳnh D', productName: 'Tai Nghe Bluetooth', quantity: 3, totalPrice: 3000000, status: 'Chờ Xử Lý' },
+  { id: 5, userName: 'Hoàng Anh E', productName: 'Áo Khoác', quantity: 5, totalPrice: 2000000, status: 'Delivered' },
+  { id: 6, userName: 'Đỗ Minh F', productName: 'Giày Thể Thao', quantity: 2, totalPrice: 2500000, status: 'Delivered' },
+  { id: 7, userName: 'Vũ Lan G', productName: 'Máy Ảnh Canon', quantity: 1, totalPrice: 10000000, status: 'Chờ Xử Lý' },
+  { id: 8, userName: 'Trương Quang H', productName: 'Đồng Hồ Thông Minh', quantity: 1, totalPrice: 1500000, status: 'Chờ Xử Lý' },
+  { id: 9, userName: 'Bùi Lê I', productName: 'Bàn Phím Cơ', quantity: 1, totalPrice: 1200000, status: 'Delivered' },
+  { id: 10, userName: 'Ngô Thanh J', productName: 'Loa Bluetooth', quantity: 2, totalPrice: 4000000, status: 'Delivered' }
+];
+
+
 export const categories = [
   { id: 1, name: "Điện Thoại", description: "Những chiếc điện thoại mới nhất" },
   { id: 2, name: "Laptop", description: "Máy tính xách tay đa dạng" },

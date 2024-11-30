@@ -7,7 +7,12 @@ import ProductPage from "../pages/ProductPage.jsx";
 import NotFoundPage from "../components/NotFoundPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
+import ProductManagementPage from "../pages/ProductManagementPage.jsx";
 import PrivateRoute from "../components/PrivateRoute.jsx";
+import UserManagementPage from "../pages/UserManagementPage.jsx";
+import OrderManagementPage from "../pages/OrderManagementPage.jsx";
+import DashboardPage from "../pages/DashboardPage.jsx";
+import SettingsPage from "../pages/SettingsPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -31,22 +36,27 @@ const router = createBrowserRouter([
     },
     {
         path: "admin",
-        element: <PrivateRoute>
-            <AdminLayout />
-        </PrivateRoute>
-        ,
+        element: <PrivateRoute>  <AdminLayout />  </PrivateRoute>,
         children: [
             {
                 path: "",
-                element: <div>Admin Dashboard</div>,
+                element: <DashboardPage />,
             },
             {
                 path: "users",
-                element: <div>Manage Users</div>,
+                element: <UserManagementPage />,
+            },
+            {
+                path: "products",
+                element: <ProductManagementPage />,
+            },
+            {
+                path: "orders",
+                element: <OrderManagementPage />,
             },
             {
                 path: "settings",
-                element: <div>Admin Settings</div>,
+                element: <SettingsPage />,
             },
         ],
     },
