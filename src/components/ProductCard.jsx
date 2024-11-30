@@ -1,45 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
     return (
-        <div className="max-w-xs border rounded-lg shadow-md overflow-hidden">
-            {/* Discount and Installment Badges */}
+        // Dùng thẻ Link để chuyển hướng tới trang chi tiết sản phẩm
+        <Link to={`/products/${product.id}`} className="max-w-xs border rounded-lg shadow-md overflow-hidden">
+            {/* Giảm giá và Trả góp */}
             <div className="relative">
                 <img
-                    src="https://onewaymobile.vn/images/products/2024/09/10/large/6_1725946350.webp"
-                    alt="Apple iPhone 16 Plus"
+                    src={product.image}
+                    alt={product.name}
                     className="w-full h-56 object-cover"
                 />
                 <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-sm rounded">
-                    Giảm 7%
+                    Giảm {product.discount}%
                 </div>
                 <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 text-sm rounded">
-                    Trả góp 0%
+                    Trả góp {product.installments}%
                 </div>
             </div>
 
-            {/* Product Info */}
+            {/* Thông tin sản phẩm */}
             <div className="p-4">
-                <h2 className="text-lg font-bold text-gray-900">
-                    Điện thoại Apple iPhone 16 Plus 128GB VN/A
-                </h2>
+                <h2 className="text-lg font-bold text-gray-900">{product.name}</h2>
                 <div className="flex items-center space-x-2 my-2">
-                    <span className="bg-gray-200 px-2 py-1 text-sm rounded">128GB</span>
-                    <span className="bg-gray-200 px-2 py-1 text-sm rounded">256GB</span>
-                    <span className="bg-gray-200 px-2 py-1 text-sm rounded">512GB</span>
+                    {product.sizes.map((size, index) => (
+                        <span key={index} className="bg-gray-200 px-2 py-1 text-sm rounded">
+                            {size}
+                        </span>
+                    ))}
                 </div>
-                <div className="text-gray-600 text-sm mb-2">6.7"</div>
+                <div className="text-gray-600 text-sm mb-2">{product.screen}</div>
                 <div className="text-red-600 font-bold text-xl mb-2">
-                    24.290.000đ
+                    {product.price.toLocaleString()}đ
                     <span className="text-gray-500 line-through text-sm ml-2">
-                        25.990.000đ
+                        {product.oldPrice.toLocaleString()}đ
                     </span>
                 </div>
                 <div className="text-gray-500 text-sm">Mới 100%</div>
                 <div className="flex items-center mt-2">
-                    {/* Stars */}
+                    {/* Đánh giá sao */}
                     <div className="flex">
-                        {[...Array(5)].map((_, i) => (
+                        {[...Array(product.rating)].map((_, i) => (
                             <svg
                                 key={i}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ const ProductCard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

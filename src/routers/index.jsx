@@ -3,6 +3,8 @@ import ErrorPage from "../components/error-page.jsx";
 import HomeLayout from "../layouts/HomeLayout.jsx";
 import AdminLayout from "../layouts/AdminLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
+import ProductDetailPage from "../pages/ProductDetailPage.jsx";
+import ProductPage from "../pages/ProductPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -15,8 +17,12 @@ const router = createBrowserRouter([
                 element: <HomePage />,
             },
             {
-                path: "about",
-                element: <div>About Page Content</div>,
+                path: "products",
+                element: <ProductPage />,
+            },
+            {
+                path: "products/:id",
+                element: <ProductDetailPage />,
             },
         ],
     },
