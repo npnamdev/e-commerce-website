@@ -5,6 +5,9 @@ import HomePage from "../pages/HomePage.jsx";
 import ProductDetailPage from "../pages/ProductDetailPage.jsx";
 import ProductPage from "../pages/ProductPage.jsx";
 import NotFoundPage from "../components/NotFoundPage.jsx";
+import LoginPage from "../pages/LoginPage.jsx";
+import RegisterPage from "../pages/RegisterPage.jsx";
+import PrivateRoute from "../components/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +31,10 @@ const router = createBrowserRouter([
     },
     {
         path: "admin",
-        element: <AdminLayout />,
+        element: <PrivateRoute>
+            <AdminLayout />
+        </PrivateRoute>
+        ,
         children: [
             {
                 path: "",
@@ -43,6 +49,14 @@ const router = createBrowserRouter([
                 element: <div>Admin Settings</div>,
             },
         ],
+    },
+    {
+        path: "login",
+        element: <LoginPage />,
+    },
+    {
+        path: "register",
+        element: <RegisterPage />,
     },
 ]);
 
